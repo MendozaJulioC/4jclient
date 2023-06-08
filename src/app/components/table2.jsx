@@ -164,8 +164,9 @@ export default function TblFunc(props) {
 
     return (
         <div>
-            <Script crossorigin src="https://code.jquery.com/jquery-3.5.1.js"></Script>
-            <Script crossorigin src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.js"></Script>
+            <Script crossorigin src="https://code.jquery.com/jquery-3.5.1.js" async></Script>
+            <Script crossorigin src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.js" async></Script>
+
             <table className=" hover stripe" style={{ width: '100%' }} ref={tableRef}></table>
             <GestionLider
                 show={show}
