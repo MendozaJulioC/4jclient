@@ -4,8 +4,8 @@ import $ from 'jquery'
 
 
 { <link  rel="stylesheet" crossOrigin="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.css" > </link>}
-<script crossorigin src="https://code.jquery.com/jquery-3.5.1.js"> </script>;
-<script crossorigin src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.js"> </script>;
+<script crossorigin src="https://code.jquery.com/jquery-3.5.1.js" async > </script>;
+<script crossorigin src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.js" async > </script>;
 
 export default function TblFunc2({ dateo }) {
     $.DataTable = require('datatables.net')
