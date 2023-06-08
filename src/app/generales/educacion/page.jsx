@@ -1,7 +1,10 @@
-export default function page() {
+import Coming from "../../components/Pronto/ProntoCooming";
+export default function Page() {
     return (
-        <div className="container">
-            Educación
+        <div>
+            Educacion
+            <Coming />
         </div>
     );
 }
+

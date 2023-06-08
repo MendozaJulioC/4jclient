@@ -1,4 +1,5 @@
-export default function page() {
+import Coming from "../../components/Pronto/ProntoCooming";
+export default function Page() {
     return (
         <div className="container-lg">
           <h1>Salud</h1>
@@ -48,6 +49,7 @@ export default function page() {
                         
 
             </ul>
+            <Coming />
         </div>
     );
 }

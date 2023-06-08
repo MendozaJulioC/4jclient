@@ -1,4 +1,5 @@
-export default function page() {
+import Coming from "../../components/Pronto/ProntoCooming";
+export default function Page() {
     return (
         <div className='container'>
             <h1>Vivienda</h1>
@@ -16,7 +17,7 @@ export default function page() {
                 <li></li>
             </ul>
       
-
+            <Coming />
 
        
           

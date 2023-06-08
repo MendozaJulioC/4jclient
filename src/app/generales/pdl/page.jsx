@@ -1,7 +1,9 @@
-export default function page() {
+import Coming from "../../components/Pronto/ProntoCooming";
+export default function Page() {
     return (
-        <div className="container">
-            pdl
-        </div>
+        <div className="text-center mt-4">
+        <h2 className="p-4">Planes de desarrollo local </h2> 
+          <Coming />
+      </div>
     );
 }

@@ -14,7 +14,7 @@ import TblFunc from '../../components/table2'
 import Card from 'react-bootstrap/Card';
 import CardGroup from 'react-bootstrap/CardGroup';
 
-export default function page() {
+export default function Page() {
     const [donde, setDonde] = useState();
     const [numbarrios, setNumBarrios] = useState();
     const [cobertura, setCobertura] = useState();
@@ -22,9 +22,6 @@ export default function page() {
 
     const MyData = () => {
         const [geojson, setGeojson] = useState();
-       
-     
-     
         const map = useMap()
         const ifGeoJsonFirst = useRef(true)
         const paintmap = useMemo(() => { return pintamapa() }, [geojson])
@@ -37,8 +34,6 @@ export default function page() {
 
         async function getData() {
             try {
-            
-              
                 const response = await axios.get('/api/maps/donde');
                 setGeojson(response.data.features)
                 ifGeoJsonFirst.current = false

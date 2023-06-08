@@ -1,4 +1,5 @@
-export default function page() {
+import Coming from "../../components/Pronto/ProntoCooming";
+export default function Page() {
     return (
         <div className="container">
           <h1>Seguridad</h1>
@@ -42,6 +43,7 @@ export default function page() {
                 <li>inversion pdm</li>
 
             </ul>
+            <Coming />
         </div>
     );
 }

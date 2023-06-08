@@ -1,13 +1,13 @@
-
+'use client'
 import Image from 'next/image'
 import styles from '../../page.module.css'
 
-export default function Page() {
+export default function Coming() {
     return (
         <>
 
         <div className={styles.center}>
-        Desarrollo
+
         <Image
           src="/img/slogan.png"
           alt="Next.js Logo"
@@ -23,12 +23,8 @@ export default function Page() {
           priority
         />
         </div>
-        <div className={styles.center}>
        
-        </div>
         </>
       
     );
 }
-
-

@@ -1,3 +1,4 @@
+import Coming from "../../components/Pronto/ProntoCooming";
 export default function page() {
     return (
         <div className="container">
@@ -28,6 +29,7 @@ export default function page() {
                 </li>
                 <li>inversion planes de desarrollo </li>
             </ul>
+            <Coming />
         </div>
     );
 }
