@@ -13,14 +13,14 @@ import TblFunc2 from '../components/table3'
 import { checkChange } from "@amcharts/amcharts5/.internal/core/util/Time";
 
 { <link rel="stylesheet" crossOrigin="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.css" > </link> }
-<script crossorigin src="https://code.jquery.com/jquery-3.5.1.js"> </script>;
-<script crossorigin src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.js"> </script>;
+<script crossorigin src="https://code.jquery.com/jquery-3.5.1.js" async > </script>;
+<script crossorigin src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.js" async> </script>;
 
 export default function TblFunc(props) {
 
     $.DataTable = require('datatables.net')
     const tableRef = useRef()
-    const [dataSet, setDataSet] = useState()
+    // const [dataSet, setDataSet] = useState()
     const [show, setShow] = useState(false);
     const [datoslider, setDatosLider] = useState()
     let datobarrio = []

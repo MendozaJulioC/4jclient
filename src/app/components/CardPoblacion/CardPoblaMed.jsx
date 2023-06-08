@@ -1,5 +1,6 @@
 'use client'
 import ProgressBar from 'react-bootstrap/ProgressBar';
+import Image from 'next/image'
 
 export default function CardPoblacionMed({ vigencia , yearquery, hombres, mujeres, porcHombres, porcMujeres}) {
     const formatter = new Intl.NumberFormat('de-DE', {
@@ -11,7 +12,7 @@ export default function CardPoblacionMed({ vigencia , yearquery, hombres, mujere
                 {/* <h1  style={{ textAlign: 'center', fontSize: '38px', lineHeight: '28px', fontWeight: '700', color: '#4C6793' }} className="text-center">{vigencia}</h1> */}
                 <div className='col-sm-12 col-md-12 col-lg-4 p-1 text-center"' >
                     <div className="border border-2  rounded-top shadow-lg border-radies mb-2 py-1 text-center" >
-                        <img
+                        <Image
                             src='/img/prs3.svg'
                             // style={{ borderRadius: '50%' }}
                             width={150}
@@ -38,7 +39,7 @@ export default function CardPoblacionMed({ vigencia , yearquery, hombres, mujere
 
                 <div className='col-sm-12 col-md-12 col-lg-4 p-1  text-center' >
                     <div className="border border-2  rounded-top shadow-lg border-radies mb-2 py-1" >
-                        <img
+                        <Image
                             src='/img/man.svg'
                             // style={{ borderRadius: '50%' }}
                             width={140}
@@ -57,7 +58,7 @@ export default function CardPoblacionMed({ vigencia , yearquery, hombres, mujere
 
                 <div className='col-sm-12 col-md-12 col-lg-4 p-1 text-center' >
                     <div className="border border-2  rounded-top shadow-lg border-radies mb-2 py-1" >
-                            <img
+                            <Image
                                 src='/img/woman.svg'
                                 // style={{ borderRadius: '50%' }}
                                 width={150}
