@@ -2,6 +2,7 @@
 import React, { useEffect, useRef, useState, useMemo } from "react"
 import $ from 'jquery'
 import axios from "axios";
+import Script from 'next/script'
 
 import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
@@ -13,11 +14,11 @@ import TblFunc2 from '../components/table3'
 import { checkChange } from "@amcharts/amcharts5/.internal/core/util/Time";
 
 { <link rel="stylesheet" crossOrigin="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.css" > </link> }
-<script crossorigin src="https://code.jquery.com/jquery-3.5.1.js" async > </script>;
+{/* <script crossorigin src="https://code.jquery.com/jquery-3.5.1.js" async > </script>; */}
 <script crossorigin src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.js" async> </script>;
 
 export default function TblFunc(props) {
-
+    <Script  crossorigin src="https://code.jquery.com/jquery-3.5.1.js"></Script>
     $.DataTable = require('datatables.net')
     const tableRef = useRef()
     // const [dataSet, setDataSet] = useState()
