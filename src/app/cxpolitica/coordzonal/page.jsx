@@ -41,7 +41,7 @@ const MyBarrios = ()=>{
     }
 }
 
-export default function page(props) {
+export default function Page(props) {
   const animatedComponents = makeAnimated();
   const [show, setShow] = useState(false);
   const [selectedOption, setSelectedOption] = useState(null);

@@ -27,6 +27,7 @@ export default function TblFunc(props) {
     const [datoslider, setDatosLider] = useState()
     let datobarrio = []
     var dataSet1 = [];
+    
     useEffect(() => { getTableData() }, [])
     async function getTableData() {
         const respuesta = await axios.get('/api/cxpolitica/querylideres')
