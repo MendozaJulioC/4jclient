@@ -17,6 +17,7 @@ export default function CardPoblacionMed({ vigencia , yearquery, hombres, mujere
                             // style={{ borderRadius: '50%' }}
                             width={150}
                             height={150}
+                            alt="Picture of the author"
                             className='mt-2'
                         />
                         <div className="card-body  text-center mb-2 mt-4">
