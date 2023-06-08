@@ -37,7 +37,7 @@ import ChartColum from "../components/Chart/ChartColumn";
 import ChartColumGini from "../components/Chart/ChartGiniColumn";
 
 
-export default function page() {
+export default function Page() {
     const router = useRouter()
     useEffect(()=>{ const session = sessionStorage.getItem('UserCook') ;  if(!session){  router.push('/login')}})
 
