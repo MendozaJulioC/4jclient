@@ -41,10 +41,10 @@ export default function Page() {
 
         async function getData() {
             try {
-                const response = await axios.get('http:127.0..0.1:3000/api/maps/donde');
+                const response = await axios.get('api/maps/donde');
                 setGeojson(response.data.features)
                 ifGeoJsonFirst.current = false
-                const response2 = await axios.get('http:127.0..0.1:3000/api/cxpolitica/donde')
+                const response2 = await axios.get('/api/cxpolitica/donde')
                 setDonde(response2.data.data[0].donde )
                 setNumBarrios(response2.data.data[0].barrios )
                 setCobertura(parseFloat(response2.data.data[0].porce).toFixed(2) )

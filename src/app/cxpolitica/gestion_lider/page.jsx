@@ -24,7 +24,7 @@ const MyBarrios = ()=>{
      const paintmap = useMemo(()=>{return getData()}, [])
      async function getData() {
         try {  
-            const response = await axios.get('http://127.0.0.1:3000/api/datos/territorio/barrios') 
+            const response = await axios.get('/api/datos/territorio/barrios')
             options.splice(0,options.length);
             for (let index = 0; index < response.data.data.length; index++) {
                 options.push({
@@ -38,7 +38,7 @@ const MyBarrios = ()=>{
     }
 }
 
-export default function Page(props) {
+export default function page(props) {
 
   const animatedComponents = makeAnimated();
   const [show, setShow] = useState(false);
@@ -60,7 +60,7 @@ export default function Page(props) {
 
 const handleonBlur = async (e)=>{
     // console.log(e.target.value)
-    const response = await axios.get(`http:127.0..0.1:3000/api/cxpolitica/querylideres/lider/${e.target.value}`)
+    const response = await axios.get(`/api/cxpolitica/querylideres/lider/${e.target.value}`)
     if(response.data.length > 0){
       console.log(response.data);
       setNombre(response.data[0].nom_lider)
@@ -141,7 +141,7 @@ console.log(errorform.length)
         tiporg: SelectOrgTipo,
         barrio: SelectBarrio
       }
-      const respuesta = await axios.post('http:127.0..0.1:3000/api/liderazgo', setCredentials)
+      const respuesta = await axios.post('/api/liderazgo', setCredentials)
       if (respuesta.data) {
         let timerInterval;
         const MySwal = withReactContent(Swal)
@@ -378,7 +378,7 @@ console.log(errorform.length)
           <button className="btn " type="submit" style={{ background: '#301E67', color: 'white' }} >
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" className="bi bi-file-earmark-check-fill" viewBox="0 0 16 16">
               <path d="M9.293 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.707A1 1 0 0 0 13.707 4L10 .293A1 1 0 0 0 9.293 0zM9.5 3.5v-2l3 3h-2a1 1 0 0 1-1-1zm1.354 4.354-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 9.793l2.646-2.647a.5.5 0 0 1 .708.708z" />
-            </svg>  
+            </svg> &nbsp;
             Guardar</button>
         </div>
       </form>
