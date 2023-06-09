@@ -94,7 +94,7 @@ export default function Page() {
 
     const handleMapVereda = async (e)=>{
         try {
-            const response = await  axios.get('http:127.0..0.1:3000/api/maps/veredas');
+            const response = await  axios.get('http:/api/maps/veredas');
             setGeoVereda(response.data.features)
             setModalShow(true)
         } catch (error) {
@@ -104,7 +104,7 @@ export default function Page() {
     const handleMapBarrios = async (e)=>{
         try {
          
-            const response = await  axios.get('http:127.0..0.1:3000/api/maps/barrios');
+            const response = await  axios.get('http:/api/maps/barrios');
             setGeoBarrio(response.data.features)
             setModalShowBarrio(true)
         } catch (error) {

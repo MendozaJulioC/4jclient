@@ -2,7 +2,7 @@
 
 import { useEffect } from 'react';
 import Map from "../components/Maps/MapMain";
-import ChartDualAxis from '../components/Chart/Chart'
+
 import { useKeys } from "../context/CtxLogin";
 import Router, { useRouter } from 'next/navigation'
 
@@ -26,7 +26,7 @@ export default function Dash() {
             <hr />
             <h1 className='display-6 text-center'>Bienvenido {nombre} </h1>
             <p>
-                ¡Bienvenido a nuestra plataforma de análisis e inteligencia pol´tica del Distrtito de Medellín! Aquí encontrarás herramientas de análisis y visulización de datos
+                ¡Bienvenido a nuestra plataforma de análisis e inteligencia política del Distrtito de Medellín! Aquí encontrarás herramientas de análisis y visulización de datos
                 para apoyar la toma de decisiones informzdas en el ámbito político y gubernamental. Esperamos que esta plataforma sea de gran ayuda!!!.
             </p>
             <div className=" container px-3 text-center row gx-5 overflow-hidden">
