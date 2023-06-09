@@ -1,5 +1,11 @@
+'use client'
+import { useEffect } from "react";
+import Router, { useRouter } from 'next/navigation'
+
 import Coming from "../../components/Pronto/ProntoCooming";
 export default function page() {
+    useEffect(()=>{ const session = sessionStorage.getItem('UserCook') ;  if(!session){  router.push('/login')}})
+    const router = useRouter()
     return (
         <div className="container">
           <h1>Servicios Públicos</h1>

@@ -23,6 +23,7 @@ export default function Header() {
         nombre= permiso[0].nombre
     }
     const router = useRouter()
+
     const handleExit = () => {
       
         createCredenciales({
@@ -33,7 +34,7 @@ export default function Header() {
             token: ''
         })
         sessionStorage.clear();
-        localStorage.clear()
+        var local = localStorage.clear()
         router.push('/login')
         // router.replace()
     }

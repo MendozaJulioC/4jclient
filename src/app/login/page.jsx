@@ -68,7 +68,7 @@ export default function Login() {
           response.data.usuario[0].token 
         )
         sessionStorage.setItem('UserCook', JSON.stringify(response.data.usuario[0].token));
-        localStorage.setItem('User', JSON.stringify(permiso))
+       var localstore= localStorage.setItem('User', JSON.stringify(permiso))
 
       router.push ('/dash')
 

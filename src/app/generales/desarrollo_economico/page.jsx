@@ -1,33 +1,15 @@
-
-import Image from 'next/image'
-import styles from '../../page.module.css'
-
+'use client'
+import { useEffect } from "react";
+import Router, { useRouter } from 'next/navigation'
+import Coming from "../../components/Pronto/ProntoCooming";
 export default function Page() {
+  useEffect(()=>{ const session = sessionStorage.getItem('UserCook') ;  if(!session){  router.push('/login')}})
+  const router = useRouter()
     return (
-        <>
-
-        <div className={styles.center}>
-        Desarrollo
-        <Image
-          src="/img/slogan.png"
-          alt="Next.js Logo"
-          width={500}
-          height={500}
-          priority
-        />
-        <Image
-          src="/img/pronto.jpg"
-          alt="Next.js Logo"
-          width={500}
-          height={500}
-          priority
-        />
-        </div>
-        <div className={styles.center}>
-       
-        </div>
-        </>
-      
+        <div className="text-center mt-4">
+        <h2 className="p-4">Desarrollo Ecónomico </h2> 
+          <Coming />
+      </div>
     );
 }
 
