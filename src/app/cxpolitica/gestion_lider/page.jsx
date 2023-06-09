@@ -24,7 +24,7 @@ const MyBarrios = ()=>{
      const paintmap = useMemo(()=>{return getData()}, [])
      async function getData() {
         try {  
-            const response = await axios.get('http://localhost:3000/api/datos/territorio/barrios') 
+            const response = await axios.get('http://127.0.0.1:3000/api/datos/territorio/barrios') 
             options.splice(0,options.length);
             for (let index = 0; index < response.data.data.length; index++) {
                 options.push({
