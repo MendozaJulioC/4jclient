@@ -8,49 +8,37 @@ import Router, { useRouter } from 'next/navigation'
 import { Button } from "react-bootstrap";
 import { useKeys } from "../context/CtxLogin";
 import { useEffect } from 'react';
-import  React,{ useState } from "react";
+import  React,{ useState, useMemo } from "react";
+import { useRef } from "react";
 
 
 export default function Header() {
     const { credenciales, createCredenciales } = useKeys()
     const [keylogin, setKeyLogin] = useState({ nombre: '' })
-    const isMobile = typeof window !== "undefined" && window.innerWidth <= 5000
-    
-let permiso;
 
 
-    if (isMobile) {
-        permiso= JSON.parse(localStorage.getItem('User')) 
-      } else {
-        console.log('You are on the server')
-        // 👉️ can't use localStorage
-      }
-    
-    let nombre='';
+    const [nombre, setNombre] = useState()
+    const permiso = useRef()
 
-    if(permiso == null){ nombre=''}else{nombre= permiso[0].nombre }
-    
-    const router = useRouter()
+    const storage = useMemo(() => {
+
+        permiso.current = JSON.parse(localStorage.getItem('User'));
+
+    }, [])
+
+
+
+
+   
+   
+    const router = useRouter()  
 
     const handleExit = () => {
-      
-        createCredenciales({
-            success: false,
-            nombre: '',
-            cedula: '',
-            email: '',
-            token: ''
-        })
-        sessionStorage.clear();
 
-       
-    if (isMobile) {
-            var local = localStorage.clear()
-          } else {
-            console.log('You are on the server')
-            // 👉️ can't use localStorage
-          }
+    
+        sessionStorage.clear();
    
+     
         router.push('/login')
         // router.replace()
     }
@@ -72,9 +60,9 @@ let permiso;
                             <li className="px-2"><Link href="/"><b>KratíAnalitik</b></Link></li>
                             
                             <li className="nav-item px-2"><Link href="/about">Acerca de</Link></li>
-                           { nombre ?<li className="nav-item px-2"><Link href="/dash">Home</Link></li>:null } 
-                            {/* <li className="nav-item px-2"><Link href="/about/team">Equipo</Link></li> */}
-                            {  nombre ?
+                        <li className="nav-item px-2"><Link href="/dash">Home</Link></li>
+                        
+                      
                                 <li className="nav-item px-2"  >
                                     <p style={{color:'white'}}>Hola &nbsp;
                                         <span>
@@ -84,15 +72,15 @@ let permiso;
                                         </span>
                                     </p>
                                 </li>
-                                : null
-                            }
-                            { nombre ? <li className="nav-item px-2"  >
+                               
+
+                          <li className="nav-item px-2"  >
                                 <Button variant="warning" onClick={handleExit} size="sm">Salir</Button>
-                            </li> :
+                            </li>
                                 <li className="nav-item px-2"  >
                                     <Link href="/login"> <Button variant="success" size="sm">Ingresar</Button></Link>
                                 </li>
-                            }
+                            
                         </ul>
                     </div>
                 </div>
