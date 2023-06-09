@@ -67,7 +67,7 @@ export default function Header() {
                                     <p style={{color:'white'}}>Hola &nbsp;
                                         <span>
                                             <b style={{ color: '#569DAA' }}>
-                                                {nombre}
+                                              
                                             </b>
                                         </span>
                                     </p>
