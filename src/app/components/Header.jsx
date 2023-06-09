@@ -6,39 +6,18 @@ import styles from '../page.module.css'
 
 import Router, { useRouter } from 'next/navigation'
 import { Button } from "react-bootstrap";
-import { useKeys } from "../context/CtxLogin";
-import { useEffect } from 'react';
+
 import  React,{ useState, useMemo } from "react";
-import { useRef } from "react";
+
 
 
 export default function Header() {
-    const { credenciales, createCredenciales } = useKeys()
-    const [keylogin, setKeyLogin] = useState({ nombre: '' })
-
-
-    // const [nombre, setNombre] = useState()
-    // const permiso = useRef()
-
-    // const storage = useMemo(() => {
-
-    //     permiso.current = JSON.parse(localStorage.getItem('User'));
-
-    // }, [])
-
-
-
-
-   
+  
    
     const router = useRouter()  
 
     const handleExit = () => {
-
-    
         sessionStorage.clear();
-   
-     
         router.push('/login')
         // router.replace()
     }
