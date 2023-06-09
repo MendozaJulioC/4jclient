@@ -46,7 +46,7 @@ export default function Login() {
  
       setValidated(true);
 
-      const response = await axios.post('/api/auth/', credentials)
+      const response = await axios.post('http:127.0..0.1:3000/api/auth/', credentials)
       setAlerta(false);
 
       if (response.data.usuario.length > 0) {

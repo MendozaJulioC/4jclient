@@ -27,7 +27,7 @@ const MyBarrios = ()=>{
      const paintmap = useMemo(()=>{return getData()}, [])
      async function getData() {
         try {  
-            const response = await axios.get('/api/datos/territorio/comunas')
+            const response = await axios.get('http:127.0..0.1:3000/api/datos/territorio/comunas')
             options.splice(0,options.length);
             for (let index = 0; index < response.data.data.length; index++) {
                 options.push({
@@ -93,7 +93,7 @@ export default function Page(props) {
     //   tiporg: SelectOrgTipo,
       comuna: SelectComuna
     }
-    const respuesta = await axios.post('/api/liderazgo', setCredentials)
+    const respuesta = await axios.post('http:127.0..0.1:3000/api/liderazgo', setCredentials)
     if (respuesta.data) {
         let timerInterval;
         const MySwal = withReactContent(Swal)

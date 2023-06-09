@@ -94,7 +94,7 @@ export default function Page() {
 
     const handleMapVereda = async (e)=>{
         try {
-            const response = await  axios.get('/api/maps/veredas');
+            const response = await  axios.get('http:127.0..0.1:3000/api/maps/veredas');
             setGeoVereda(response.data.features)
             setModalShow(true)
         } catch (error) {
@@ -104,7 +104,7 @@ export default function Page() {
     const handleMapBarrios = async (e)=>{
         try {
          
-            const response = await  axios.get('/api/maps/barrios');
+            const response = await  axios.get('http:127.0..0.1:3000/api/maps/barrios');
             setGeoBarrio(response.data.features)
             setModalShowBarrio(true)
         } catch (error) {
@@ -114,7 +114,7 @@ export default function Page() {
     const handleMapCorregto = async (e)=>{
         try {
         
-            const response = await  axios.get('/api/maps/corregimientos');
+            const response = await  axios.get('http:127.0..0.1:3000/api/maps/corregimientos');
             setGeoCorregto(response.data.features)
             setModalShowCorregto(true)
            
@@ -124,7 +124,7 @@ export default function Page() {
     }
     const handleMapComuna = async (e)=>{
         try {
-            const response = await  axios.get('/api/maps/comunas');
+            const response = await  axios.get('http:127.0..0.1:3000/api/maps/comunas');
             setGeoComuna(response.data.features)
             setModalShowComuna(true)
           } catch (error) {
@@ -134,7 +134,7 @@ export default function Page() {
     const handleMapPoblaComuna = async(e)=>{
         try {
            
-             const response = await axios.get( `/api/maps/poblacioncomunas/${vigenciaQuery}`);
+             const response = await axios.get( `http:127.0..0.1:3000/api/maps/poblacioncomunas/${vigenciaQuery}`);
              setGeojson(response.data.features) 
             setModalShowPobla(true)
 
@@ -144,7 +144,7 @@ export default function Page() {
     }
     const handleMapPoblaBarrio = async(e)=>{
         try {
-            const response = await axios.get( `/api/maps/poblacionbarrios/${vigenciaQuery}`);
+            const response = await axios.get( `http:127.0..0.1:3000/api/maps/poblacionbarrios/${vigenciaQuery}`);
             setGeojson(response.data.features) 
              setModalShowBarrioPobla(true)
         } catch (error) {
@@ -154,7 +154,7 @@ export default function Page() {
     const handleGraphGrupoEdad = async(e)=>{
         try {
             let pyramid= [];
-            const response = await axios.get(`/api/datos/rangoedadsex/${vigenciaQuery}`)
+            const response = await axios.get(`http:127.0..0.1:3000/api/datos/rangoedadsex/${vigenciaQuery}`)
             response.data.forEach(element => {
                 pyramid.push(
                     {
@@ -172,7 +172,7 @@ export default function Page() {
     }
     const handleMapIpex = async(req, rres)=>{
         try {
-            const response = await axios.get(`/api/maps/ipex/${yqimcv}`)
+            const response = await axios.get(`http:127.0..0.1:3000/api/maps/ipex/${yqimcv}`)
            
             setGeojson(response.data.features)
             setModalShowIpex(true)
@@ -186,13 +186,13 @@ export default function Page() {
     const handleSubmitIMCV = async(e)=>{
         e.preventDefault();
         e.stopPropagation();
-        const response = await axios.get(`/api/datos/imcv/${yqimcv}`)
+        const response = await axios.get(`http:127.0..0.1:3000/api/datos/imcv/${yqimcv}`)
       
         setImcv({
             vigencia: response.data[2].vigencia,
             results: response.data[2].results
         })
-        const responseipm = await axios.get(`/api/datos/ipm/${yqimcv}`)
+        const responseipm = await axios.get(`http:127.0..0.1:3000/api/datos/ipm/${yqimcv}`)
         setIpm({
             vigencia : responseipm.data[0].vigencia,
             results : responseipm.data[0].results
@@ -202,7 +202,7 @@ export default function Page() {
     const handleSubmit = async (event) => {
         event.preventDefault();
         event.stopPropagation();
-        const response = await  axios.get(`/api/datos/poblacionmed/${valor}`);
+        const response = await  axios.get(`http:127.0..0.1:3000/api/datos/poblacionmed/${valor}`);
         setTotalPobla (response.data[0].total)
         setTotalHombre( response.data[0].hombres)
         setTotalMujer(response.data[0].mujeres)

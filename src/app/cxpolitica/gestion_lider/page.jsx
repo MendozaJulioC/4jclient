@@ -24,7 +24,7 @@ const MyBarrios = ()=>{
      const paintmap = useMemo(()=>{return getData()}, [])
      async function getData() {
         try {  
-            const response = await axios.get('/api/datos/territorio/barrios')
+            const response = await axios.get('http:127.0..0.1:3000/api/datos/territorio/barrios')
             options.splice(0,options.length);
             for (let index = 0; index < response.data.data.length; index++) {
                 options.push({
@@ -60,7 +60,7 @@ export default function Page(props) {
 
 const handleonBlur = async (e)=>{
     // console.log(e.target.value)
-    const response = await axios.get(`/api/cxpolitica/querylideres/lider/${e.target.value}`)
+    const response = await axios.get(`http:127.0..0.1:3000/api/cxpolitica/querylideres/lider/${e.target.value}`)
     if(response.data.length > 0){
       console.log(response.data);
       setNombre(response.data[0].nom_lider)
@@ -141,7 +141,7 @@ console.log(errorform.length)
         tiporg: SelectOrgTipo,
         barrio: SelectBarrio
       }
-      const respuesta = await axios.post('/api/liderazgo', setCredentials)
+      const respuesta = await axios.post('http:127.0..0.1:3000/api/liderazgo', setCredentials)
       if (respuesta.data) {
         let timerInterval;
         const MySwal = withReactContent(Swal)
