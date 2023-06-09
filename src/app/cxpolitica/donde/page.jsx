@@ -7,7 +7,10 @@ import styles from '../donde/page.module.css'
 import { useEffect } from 'react';
 import axios from "axios"
 import  React,{ useState, useRef , useMemo} from "react";
-import { MapContainer, TileLayer,LayersControl ,LayerGroup,Marker, Popup,  FeatureGroup,  Polygon,  GeoJSON , useMap} from 'react-leaflet'
+import Router, { useRouter } from 'next/navigation'
+
+import { MapContainer, TileLayer,  GeoJSON , useMap} from 'react-leaflet'
+
 
 import TblFunc from '../../components/table2'
 
@@ -18,6 +21,8 @@ export default function Page() {
     const [donde, setDonde] = useState();
     const [numbarrios, setNumBarrios] = useState();
     const [cobertura, setCobertura] = useState();
+
+    const router = useRouter()
    
 
     const MyData = () => {
@@ -27,8 +32,10 @@ export default function Page() {
         const paintmap = useMemo(() => { return pintamapa() }, [geojson])
 
         useEffect(() => {
+            const session = sessionStorage.getItem('UserCook') ;  if(!session){  router.push('/login')}
             if (ifGeoJsonFirst.current) {
-                getData()
+          
+               getData()
             }
         }, [])
 

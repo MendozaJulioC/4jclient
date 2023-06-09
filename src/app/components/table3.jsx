@@ -1,11 +1,11 @@
 'use client'
 import React, { useEffect, useRef, useState, useMemo } from "react"
 import $ from 'jquery'
+import Script from 'next/script'
 
 
 { <link  rel="stylesheet" crossOrigin="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.css" > </link>}
-<script crossorigin src="https://code.jquery.com/jquery-3.5.1.js" async > </script>;
-<script crossorigin src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.js" async > </script>;
+
 
 export default function TblFunc2({ dateo }) {
     $.DataTable = require('datatables.net')
@@ -109,6 +109,8 @@ export default function TblFunc2({ dateo }) {
     }
     return (
         <div>
+            <Script crossorigin src="https://code.jquery.com/jquery-3.5.1.js" async></Script>
+            <Script  crossorigin src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.js"async></Script>
             <table className=" hover stripe" style={{ width: '100%' }} ref={tableRef2}></table>
         </div>
     )
