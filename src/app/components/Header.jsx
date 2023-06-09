@@ -14,7 +14,14 @@ import  React,{ useState } from "react";
 export default function Header() {
     const { credenciales, createCredenciales } = useKeys()
     const [keylogin, setKeyLogin] = useState({ nombre: '' })
-    let permiso= JSON.parse(localStorage.getItem('User')) 
+let permiso;
+
+    if (typeof window !== 'undefined') {
+        permiso= JSON.parse(localStorage.getItem('User')) 
+      } else {
+        console.log('You are on the server')
+        // 👉️ can't use localStorage
+      }
     
     let nombre='';
     if(permiso == null){
