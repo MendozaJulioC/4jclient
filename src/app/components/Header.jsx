@@ -17,14 +17,14 @@ export default function Header() {
     const [keylogin, setKeyLogin] = useState({ nombre: '' })
 
 
-    const [nombre, setNombre] = useState()
-    const permiso = useRef()
+    // const [nombre, setNombre] = useState()
+    // const permiso = useRef()
 
-    const storage = useMemo(() => {
+    // const storage = useMemo(() => {
 
-        permiso.current = JSON.parse(localStorage.getItem('User'));
+    //     permiso.current = JSON.parse(localStorage.getItem('User'));
 
-    }, [])
+    // }, [])
 
 
 
