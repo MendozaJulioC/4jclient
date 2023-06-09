@@ -14,9 +14,12 @@ import  React,{ useState } from "react";
 export default function Header() {
     const { credenciales, createCredenciales } = useKeys()
     const [keylogin, setKeyLogin] = useState({ nombre: '' })
+    const isMobile = typeof window !== "undefined" && window.innerWidth <= 5000
+    
 let permiso;
 
-    if (typeof window !== 'undefined') {
+
+    if (isMobile) {
         permiso= JSON.parse(localStorage.getItem('User')) 
       } else {
         console.log('You are on the server')
@@ -24,11 +27,9 @@ let permiso;
       }
     
     let nombre='';
-    if(permiso == null){
-        nombre=''
-    }else{
-        nombre= permiso[0].nombre
-    }
+
+    if(permiso == null){ nombre=''}else{nombre= permiso[0].nombre }
+    
     const router = useRouter()
 
     const handleExit = () => {
@@ -41,7 +42,9 @@ let permiso;
             token: ''
         })
         sessionStorage.clear();
-        if (typeof window !== 'undefined') {
+
+       
+    if (isMobile) {
             var local = localStorage.clear()
           } else {
             console.log('You are on the server')
