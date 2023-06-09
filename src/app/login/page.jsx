@@ -68,7 +68,14 @@ export default function Login() {
           response.data.usuario[0].token 
         )
         sessionStorage.setItem('UserCook', JSON.stringify(response.data.usuario[0].token));
-       var localstore= localStorage.setItem('User', JSON.stringify(permiso))
+
+        if (typeof window !== 'undefined') {
+          localStorage.setItem('User', JSON.stringify(permiso));
+        } else {
+          console.log('You are on the server')
+          // 👉️ can't use localStorage
+        }
+  
 
       router.push ('/dash')
 

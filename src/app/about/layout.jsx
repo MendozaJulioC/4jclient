@@ -5,7 +5,7 @@ export const metadata ={
 const AboutLayout = ({children}) => {
   return (
     <div className="container mt-4 py-4">
-        <h1> AboutLayout </h1>
+        <h1> Hola!!! </h1>
 
         {children}
     </div>

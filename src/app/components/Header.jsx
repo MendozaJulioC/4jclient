@@ -34,7 +34,13 @@ export default function Header() {
             token: ''
         })
         sessionStorage.clear();
-        var local = localStorage.clear()
+        if (typeof window !== 'undefined') {
+            var local = localStorage.clear()
+          } else {
+            console.log('You are on the server')
+            // 👉️ can't use localStorage
+          }
+   
         router.push('/login')
         // router.replace()
     }
